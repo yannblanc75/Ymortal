@@ -1,11 +1,14 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
-    - QuickStart.PlayerScript
+    - CameraControler
+    - GunSystem
+    - PlayerHealth
+    - QuickStart.PlayerMovements
     Mirror.Components.dll:
     - Mirror.NetworkTransformUnreliable
     Mirror.Transports.dll:
-    - Mirror.TelepathyTransport
+    - kcp2k.KcpTransport
     Mirror.dll:
     - Mirror.NetworkIdentity
     - Mirror.NetworkManager
@@ -13,16 +16,43 @@ ScriptsOnlyBuild:
     - Mirror.NetworkStartPosition
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
+    Unity.TextMeshPro:
+    - TMPro.TMP_FontAsset
+    - TMPro.TMP_Settings
+    - TMPro.TMP_SpriteAsset
+    - TMPro.TMP_StyleSheet
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
     - UnityEditor.TestTools.TestRunner.TestRun.TestJobDataHolder
+    UnityEngine.UI.dll:
+    - UnityEngine.EventSystems.EventSystem
+    - UnityEngine.EventSystems.StandaloneInputModule
   serializedClasses:
     Mirror:
     - Mirror.SnapshotInterpolationSettings
+    Unity.TextMeshPro:
+    - TMPro.FaceInfo_Legacy
+    - TMPro.FontAssetCreationSettings
+    - TMPro.KerningTable
+    - TMPro.TMP_Character
+    - TMPro.TMP_FontFeatureTable
+    - TMPro.TMP_FontWeightPair
+    - TMPro.TMP_GlyphAdjustmentRecord
+    - TMPro.TMP_GlyphPairAdjustmentRecord
+    - TMPro.TMP_GlyphValueRecord
+    - TMPro.TMP_Sprite
+    - TMPro.TMP_SpriteCharacter
+    - TMPro.TMP_SpriteGlyph
+    - TMPro.TMP_Style
+    UnityEngine.TextCoreFontEngineModule:
+    - UnityEngine.TextCore.FaceInfo
+    - UnityEngine.TextCore.Glyph
+    - UnityEngine.TextCore.GlyphMetrics
+    - UnityEngine.TextCore.GlyphRect
   methodsToPreserve: []
   sceneClasses:
-    Assets/Scenes/SampleScene.unity:
+    Assets/Scenes/Game.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -41,41 +71,81 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 49
+      Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
+    - Class: 74
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 84
+      Script: {instanceID: 0}
     - Class: 89
       Script: {instanceID: 0}
-    - Class: 102
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
       Script: {instanceID: 0}
     - Class: 104
       Script: {instanceID: 0}
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1890}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 3382}
+      Script: {instanceID: 2292}
     - Class: 114
-      Script: {instanceID: 3582}
+      Script: {instanceID: 2774}
     - Class: 114
-      Script: {instanceID: 4660}
+      Script: {instanceID: 3416}
     - Class: 114
-      Script: {instanceID: 4790}
+      Script: {instanceID: 3616}
     - Class: 114
-      Script: {instanceID: 6324}
+      Script: {instanceID: 4434}
     - Class: 114
-      Script: {instanceID: 8012}
+      Script: {instanceID: 4694}
+    - Class: 114
+      Script: {instanceID: 4726}
+    - Class: 114
+      Script: {instanceID: 4824}
+    - Class: 114
+      Script: {instanceID: 5232}
+    - Class: 114
+      Script: {instanceID: 5500}
+    - Class: 114
+      Script: {instanceID: 5718}
+    - Class: 114
+      Script: {instanceID: 6360}
+    - Class: 114
+      Script: {instanceID: 6432}
+    - Class: 114
+      Script: {instanceID: 6694}
+    - Class: 114
+      Script: {instanceID: 7338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
+    - Class: 137
+      Script: {instanceID: 0}
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 328
+      Script: {instanceID: 0}
+    - Class: 329
       Script: {instanceID: 0}
   scriptHashData:
   - hash:
@@ -144,6 +214,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples
     namespaceName: Mirror.Examples.AdditiveLevels
     className: PlayerController
+  - hash:
+      serializedVersion: 2
+      Hash: 0365f8cbefcf09bf55963efd0b3d8c68
+    assemblyName: Assembly-CSharp
+    namespaceName: QuickStart
+    className: PlayerMovements
   - hash:
       serializedVersion: 2
       Hash: 8dff8e9853297d341afa0c11f9091b59
@@ -228,6 +304,12 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples
     namespaceName: Mirror.Examples.MultipleAdditiveScenes
     className: MultiSceneNetManager
+  - hash:
+      serializedVersion: 2
+      Hash: b88ba88b97570d8e81892347fec90ba8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerCam
   - hash:
       serializedVersion: 2
       Hash: a4006dfaf65bec8fbbb320da6fe0a96c
@@ -1070,6 +1152,12 @@ ScriptsOnlyBuild:
     className: PanelEventHandler
   - hash:
       serializedVersion: 2
+      Hash: 3e39b411ce7ca746821c7318be3361b8
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: CameraControler
+  - hash:
+      serializedVersion: 2
       Hash: 9dd54ce33440072d6692a67e0c384ad1
     assemblyName: Unity.Timeline
     namespaceName: UnityEngine.Timeline
@@ -1224,6 +1312,18 @@ ScriptsOnlyBuild:
     assemblyName: Mirror.Examples
     namespaceName: Mirror.Examples.MultipleMatch
     className: MatchNetworkManager
+  - hash:
+      serializedVersion: 2
+      Hash: fd51bfdbd34d23520e5b01c3c177fe19
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PhantomCameraController
+  - hash:
+      serializedVersion: 2
+      Hash: 72b867e019e3c502d3702ce37f9e9663
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: PlayerHealth
   - hash:
       serializedVersion: 2
       Hash: e03224941f4540c65d33d4e215aa2b14
@@ -1458,6 +1558,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI
     namespaceName: UnityEngine.UI
     className: PositionAsUV1
+  - hash:
+      serializedVersion: 2
+      Hash: 39a0221af482843d5b37d520b28e2dec
+    assemblyName: Assembly-CSharp
+    namespaceName: 
+    className: GunSystem
   - hash:
       serializedVersion: 2
       Hash: 6a0b5b415c00f783202fd1ae2d556cb2
@@ -1772,5 +1878,5 @@ ScriptsOnlyBuild:
     className: UnityOnSliderValueChangedMessageListener
   platform: 19
   scenePathNames:
-  - Assets/Scenes/SampleScene.unity
-  playerPath: C:/Users/janne/Documents/Ynov/cours/B2/GameProg/Infinite-side-scroller-2D/Miror/game_run/test/Miror.exe
+  - Assets/Scenes/Game.unity
+  playerPath: C:/Users/janne/Desktop/caca.exe/Miror.exe
