@@ -6,12 +6,9 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
-/Test_Run/
-/game_run/
 
 
 # Uncomment this line if you wish to ignore the asset store tools plugin
-# [Aa]ssets/AssetStoreTools*
 
 # Visual Studio cache directory
 .vs/
